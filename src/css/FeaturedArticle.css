@@ -1,0 +1,12 @@
+
+#featuredContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(221,222,224);
+    padding-left: 10px;
+    width: 950px;
+}
+
+#featuredContainer h1 {
+    color: rgb(75, 77, 80);
+}

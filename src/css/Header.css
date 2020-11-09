@@ -1,0 +1,25 @@
+
+#header {
+    display: flex;
+    background-color: rgb(83,167,250);
+    align-items: center;
+    color: white;
+    margin-bottom: 25px;
+    padding-left: 20px;
+    width: 1000px;
+
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    margin: 20px;
+}
+
+#header h1 {
+    margin-right: 60px;
+}
+
+#categories {
+font-weight: 250;}

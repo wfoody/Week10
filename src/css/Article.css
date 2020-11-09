@@ -1,0 +1,30 @@
+#container {
+    display: flex;
+    flex-direction: column;
+    width: 950px;
+
+}
+
+#commentLikeBar {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    background-color: rgb(242,147,30);
+    justify-content: left;
+    height: 30px;
+    align-items: center;
+}
+
+#articleTitle {
+    color: rgb(7, 104, 193);
+    font-weight: normal;
+}
+
+#commentLikeBar p {
+    margin-right: 20px;
+    padding-left: 5px;
+}
+
+#titleAndText {
+    padding-left: 5px;
+}
