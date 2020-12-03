@@ -4,9 +4,12 @@ const express = require('express')
 const app = express()
 const {Op} = require('sequelize')
 const cors = require('cors')
+// const bodyParser = require('body-parser')
 
 app.use(cors())
-app.use(express.json()) 
+app.use(express.json()) // body parser
+// app.use(bodyParser.json())
+
 // models.Book.findByPk(1)
 // .then((book) => console.log(book))
 
@@ -49,6 +52,10 @@ app.use(express.json())
 //     }
 // })
 app.get('/', (req, res) => {
+    
+    
+    
+    
     console.log(200)
     // res.send('hello')
     models.Book.findAll().then(books => {
@@ -56,24 +63,48 @@ app.get('/', (req, res) => {
     })
 })
 
-app.post('/', (req, res) => {
+app.post('/add-book', (req, res) => {
     
     const title = req.body.title
+    const author = req.body.author
     const year = req.body.year
-    const genre = req.body.genre
     const review = req.body.review
+    const coverUrl = req.body.coverUrl
     
     let book = models.Book.build({
             title: title,
+            author: author,
             year: year,
-            genre: genre,
-            review: review
+            review: review,
+            coverUrl: coverUrl
         })
         
-        .then(book.save())
+        book.save()
 
         res.json({success: true})
 }) 
+
+app.get('/:bookId', (req, res) => {
+
+    const bookId = req.params.bookId
+
+    models.Book.findByPk(bookId).then(book => {
+        res.json(book)
+    })
+})
+
+app.delete('/delete-book', (req, res) => {
+    
+    const bookId = req.body.id
+    
+    models.Book.destroy({
+        where: {
+            id: bookId
+            }
+        })
+
+        res.json({success: true})
+})
 
 app.listen(8080, () => {
     console.log('Server is running...')

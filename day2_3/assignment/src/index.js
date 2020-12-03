@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import BaseLayout from './Components/BaseLayout';
 import AddBook from './Components/AddBook';
+// import BookDetails from './Components/BookDetails';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -14,6 +15,7 @@ ReactDOM.render(
         <Switch>
             <Route component = {App} path = "/" exact />
             <Route component = {AddBook} path = "/add-book" />
+            {/* <Route component = {DeleteBook} path = "/delete-book" /> */}
 
         </Switch>
       </BaseLayout>
